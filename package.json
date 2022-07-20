@@ -21,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "test": "react-scripts test",
     "flow": "flow",
     "eject": "react-scripts eject"
@@ -44,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "flow-bin": "^0.183.0"
+    "flow-bin": "^0.183.0",
+    "source-map-explorer": "^2.5.2"
   }
 }
