@@ -2,7 +2,6 @@ import UserContext from "contexts/UserContext";
 import React, { useContext, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import apis from "services/axios";
-import ReactDom from "react-dom";
 
 // import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
