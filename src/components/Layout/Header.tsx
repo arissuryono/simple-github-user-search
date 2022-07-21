@@ -16,7 +16,7 @@ function Header() {
           <img
             src={`${process.env.PUBLIC_URL}/images/github.png`}
             alt="source to this repo"
-            style={{ width: "32px" }}
+            className={styles.logo__github}
           />
         </a>
       </div>
