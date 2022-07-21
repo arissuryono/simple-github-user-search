@@ -40,7 +40,7 @@ const Card = ({ repo, user }: { repo: any; user: any }) => {
     <div className={styles.card}>
       <div className={styles.card__header}>
         {available ? (
-          <button onClick={handleClick}>
+          <button onClick={handleClick} className={styles.repo__button}>
             {hide ? "Open" : "Close"} <b>{repo.full_name}</b> README.md
           </button>
         ) : (
@@ -48,7 +48,7 @@ const Card = ({ repo, user }: { repo: any; user: any }) => {
             <b>{repo.full_name}</b> doesn't have README.md
           </span>
         )}
-        <a href={repoUrl} target="__blank">
+        <a href={repoUrl} target="__blank" className={styles.repo__link}>
           Open repository in new tab
         </a>
       </div>

@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   & button {
-    width: 50%;
+    // width: 50%;
     text-align: left;
   }
 }
@@ -20,4 +20,18 @@
   margin: 10px;
   padding: 0 4px;
   min-height: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .repo__link {
+    display: none;
+  }
+  .repo__button {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .repo__button {
+    width: 50%;
+  }
 }
