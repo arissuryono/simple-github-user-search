@@ -15,6 +15,7 @@ function App() {
         <Route index element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile/:userName" element={<Profile />} />
+        <Route path="/profile/:userName/readm" element={<Profile />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

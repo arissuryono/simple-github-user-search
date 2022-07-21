@@ -1,30 +1,18 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import apis from "services/axios";
 
 // import PropTypes from 'prop-types'
-
-const token = process.env.REACT_APP_TOKEN;
-const options = {
-  headers: {
-    Accept: "application/vnd.github+json",
-    Authorization: `token ${token}`,
-  },
-};
-const baseUrl = "https://api.github.com";
-
-function useGithubUser(username: string) {
-  const [user, setUser] = useState({});
+function useGithubUser(userName: string) {
+  const [user, setUser] = useState({ name: "", avatar_url: "" });
 
   useEffect(() => {
-    axios
-      .get(`${baseUrl}/users/${username}`, options)
+    apis
+      .getUser(userName)
       .then((response) => {
-        console.log(response.data);
-
         setUser(response.data);
       })
       .catch((err) => console.log(err));
-  }, [username]);
+  }, [userName]);
 
   return {
     user,

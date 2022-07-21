@@ -1,23 +1,13 @@
-import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-
-const token = process.env.REACT_APP_TOKEN;
-// const token = "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";
-const options = {
-  headers: {
-    Accept: "application/vnd.github+json",
-    Authorization: `token ${token}`,
-  },
-};
-const baseUrl = "https://api.github.com";
+import apis from "services/axios";
 
 function useSearchUserList() {
   const [userList, setUserList] = useState([]);
 
   const search = useCallback(({ q }: { q: string }) => {
     const params = `q=${q}+in:name`;
-    axios
-      .get(`${baseUrl}/search/users?${params}`, options)
+    apis
+      .searchUser(params)
       .then((response) => {
         setUserList(response.data.items);
       })
