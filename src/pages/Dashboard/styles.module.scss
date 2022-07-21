@@ -5,7 +5,18 @@
   align-items: center;
 }
 .user__list {
-  //
+  // display: flex;
+  // justify-content: space-between;
 }
-.user__record {
+.user__record,
+a {
+  display: flex;
+  align-items: flex-start;
+  & img {
+    padding: 4px;
+  }
+}
+
+.user__avatar {
+  height: 50px;
 }

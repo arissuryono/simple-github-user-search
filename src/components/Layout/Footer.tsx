@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 function Footer() {
   return (
     <div className={styles.footer__container}>
-      <span>Footer</span>
+      <span>v1.0</span>
     </div>
   );
 }
