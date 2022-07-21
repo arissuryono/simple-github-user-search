@@ -14,6 +14,7 @@ const ReadmeContainer = ({ raw }: { raw: string }) => (
 );
 
 const Card = ({ repo, user }: { repo: any; user: any }) => {
+  const [available, setAvailable] = useState(true);
   const [hide, setHide] = useState(true);
   const [rawHtml, setRawHtml] = useState("");
   const readmeUrl = `https://raw.githubusercontent.com/${repo.full_name}/${repo.default_branch}/README.md`;
@@ -28,15 +29,25 @@ const Card = ({ repo, user }: { repo: any; user: any }) => {
           setHide((prev) => !prev);
           setRawHtml(response?.data || "");
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          //   there's no readme
+          setAvailable(false);
+          console.log(err);
+        });
   };
 
   return (
     <div className={styles.card}>
       <div className={styles.card__header}>
-        <button onClick={handleClick}>
-          {hide ? "Open" : "Close"} <b>{repo.full_name}</b> README.md
-        </button>
+        {available ? (
+          <button onClick={handleClick}>
+            {hide ? "Open" : "Close"} <b>{repo.full_name}</b> README.md
+          </button>
+        ) : (
+          <span>
+            <b>{repo.full_name}</b> doesn't have README.md
+          </span>
+        )}
         <a href={repoUrl} target="__blank">
           Open repository in new tab
         </a>
