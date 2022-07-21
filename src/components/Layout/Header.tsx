@@ -11,7 +11,15 @@ function Header() {
         <Link to="/">Home</Link>
       </div>
       <div>Search GitHub User</div>
-      <div>?</div>
+      <div>
+        <a href="https://github.com/arissuryono/simple-github-user-search">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/github.png`}
+            alt="source to this repo"
+            style={{ width: "32px" }}
+          />
+        </a>
+      </div>
     </div>
   );
 }
