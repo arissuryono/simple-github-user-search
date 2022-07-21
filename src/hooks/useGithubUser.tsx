@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 // import PropTypes from 'prop-types'
 
-const token = "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";
+const token = process.env.REACT_APP_TOKEN;
 const options = {
   headers: {
     Accept: "application/vnd.github+json",

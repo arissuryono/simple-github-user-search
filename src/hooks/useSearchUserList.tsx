@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 
-const token = "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";
+const token = process.env.REACT_APP_TOKEN;
+// const token = "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";
 const options = {
   headers: {
     Accept: "application/vnd.github+json",
