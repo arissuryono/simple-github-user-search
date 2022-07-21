@@ -8,6 +8,7 @@ type SearchInputProps = {
   query: string;
   setQuery: (query: string) => void;
 };
+
 function SearchInput({ onSearch, query, setQuery }: SearchInputProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setQuery(e.target.value);

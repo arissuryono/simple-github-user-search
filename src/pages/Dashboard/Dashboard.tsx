@@ -6,9 +6,12 @@ import { Link } from "react-router-dom";
 // import PropTypes from 'prop-types'
 
 import styles from "./styles.module.scss";
+import { useSelector } from "react-redux";
+import { IRootState } from "types/reducers";
 function Dashboard() {
   const { userList, search } = useSearchUserList();
   const [query, setQuery] = useState("");
+  const users = useSelector((state: IRootState) => state.data.results);
 
   const handleSearch = () => search({ q: query });
 
@@ -31,6 +34,7 @@ function Dashboard() {
     <div className={styles.dashboard__container}>
       <SearchInput onSearch={handleSearch} query={query} setQuery={setQuery} />
       <div className={styles.user__list}>
+        {false && users.length > 0 && userList.map(renderUserLink)}
         {userList.length > 0 && userList.map(renderUserLink)}
       </div>
     </div>
