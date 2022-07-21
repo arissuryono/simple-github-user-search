@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import apis from "services/axios";
 import {
   submitSearch,
   submitSearchFailed,
   submitSearchSuccess,
 } from "store/actions/data";
+import { IRootState } from "types/reducers";
 
 function useSearchUserList() {
-  const [userList, setUserList] = useState([]);
+  const users = useSelector((state: IRootState) => state.data.results);
+  const [userList, setUserList] = useState(users);
   const dispatch = useDispatch();
 
   const search = useCallback(({ q }: { q: string }) => {
