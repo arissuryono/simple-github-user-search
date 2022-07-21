@@ -1,0 +1,29 @@
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 40px;
+  background: #ffff;
+}
+
+.content__container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.footer__container {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  height: 40px;
+  width: 100%;
+  background: #ffff;
+  align-items: center;
+  justify-content: flex-end;
+  & span {
+    margin-right: 40px;
+  }
+}
